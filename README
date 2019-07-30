@@ -1,0 +1,12 @@
+In this, we are trying to get the RGB colour code from the Hex code. We are using Golang and exposing an HTTP endpoint (/convert/<hex-value>) which gives your RGB code for that hex code.
+
+In our code, we are using gin-gonic Go library for exposing HTTP endpoint (a light-weight webserver) and go-playground/colors for color conversion. We are also logging our requests into a logfile for debugging or pushing logs to any APM or monitoring server.
+
+We are dockerizing our entire application which means our application is self-contained and is of OS-agnostic (as long as OS is capable of running containers) and further we can orchestrate our application using any container orchestrator like Docker Swarm or Kubernetes which ensures application scalability.
+
+How to run:
+$ bash run.sh
+
+* Above script will build the docker image
+* Spin a container from that docker image
+* Send few curl requests to the endpoint (http://localhost:8080/convert/<HEX-CODE>
